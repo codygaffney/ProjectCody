@@ -31,6 +31,7 @@ function initializeGame() {
       );
       if (emptyPlot) {
         plantSeed(emptyPlot, currentCrop, unlockedCrops);
+        updateButtons();
       } else {
         alert('No empty plots available!');
       }
@@ -41,10 +42,12 @@ function initializeGame() {
 
   document.getElementById('upgrade-plot').addEventListener('click', () => {
     upgradePlot();
+    updateButtons();
   });
 
   document.getElementById('unlock-crop').addEventListener('click', () => {
     unlockedCrops = unlockNewCrop(unlockedCrops, crops);
+    updateButtons();
   });
 }
 

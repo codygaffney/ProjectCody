@@ -31,7 +31,7 @@ export function getUnlockCropCost() {
 
 export function unlockNewCrop(unlockedCrops, crops) {
   if (spendMoney(unlockCropCost)) {
-    unlockCropCost += 5; // Increase cost for the next crop unlock
+    unlockCropCost *= 5; // Increase cost for the next crop unlock
     unlockedCrops++;
     alert(`Unlocked new crop: ${crops[unlockedCrops - 1].name}`);
     return unlockedCrops;
