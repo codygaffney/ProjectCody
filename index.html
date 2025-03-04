@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farming Clicker Game</title>
-  <link rel="stylesheet" href="./styles/style.css">
+  <title>Project Cody - Game Development</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body>
-  <h1>Farming Clicker Game</h1>
-  
-  <!-- Main Game Container -->
-  <div id="game-container">
-    <!-- Left Column for Upgrades -->
-    <div id="left-column">
-      <h2>Upgrades</h2>
-      <ul id="upgrades-list">
-        <!-- Upgrade options will be added dynamically -->
-      </ul>
-    </div>
+  <div class="background"></div>
+  <header>
+    <h1 class="glitch">Project Cody</h1>
+    <p id="typewriter">Just my Little Game Development Projects</p>
+  </header>
 
-    <!-- Middle Section -->
-    <div id="middle-section">
-      <p>Money: $<span id="money">10</span></p>
-      <button id="buy-seed">Buy Seed ($1)</button>
-      <button id="upgrade-plot">Upgrade Plot ($5)</button>
-      <button id="unlock-crop">Unlock New Crop ($10)</button>
-      <div class="farm-container">
-        <div id="farm">
-          <!-- Plots go here -->
-        </div>
-      </div>
-    </div>
+  <br><br>
 
-    <!-- Right Column for Achievements -->
-    <div id="right-column">
-      <h2>Achievements</h2>
-      <ul id="achievements-list">
-        <!-- Achievement items will be added dynamically -->
-      </ul>
-    </div>
-  </div>
+  <!--
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  -->
+  <section id="about">
+    <h2>About Project Cody</h2>
+    <p>Welcome to Project Cody, where I try game development. My mission is to build immersive and engaging gaming
+      experiences... sometimes.</p>
+  </section>
 
-  <!-- Link to Game Script -->
-  <script type="module" src="./scripts/game.js"></script>
+  <br><br>
+
+  <section id="features">
+    <h1>Games Under Developement</h1>
+    <h2>Money Maker!</h2>
+    <p>Click to get rich!</p>
+    <button onclick="location.href='moneymaker/index.html'">Start Game</button>
+
+    <h2>Farming Clicker!</h2>
+    <p>Grow crops, earn money, and expand your farm!</p>
+
+    <button onclick="location.href='farmingclicker/farmclicker.html'">Start Game</button>
+  </section>
+  <br><br>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: codygaffney94@gmail.com</p>
+  </section>
+  <footer>
+    <p>&copy; 2025 Project Cody. All Rights Reserved.</p>
+  </footer>
+  <div class="loader"></div>
 </body>
+
 </html>

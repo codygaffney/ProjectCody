@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farming Clicker Game</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <h1>Farming Clicker Game</h1>
+  
+  <!-- Main Game Container -->
+  <div id="game-container">
+    <!-- Left Column for Seed Selection -->
+    <div id="left-column">
+      <h2>Seeds</h2>
+      <div id="seed-list" class="scrollable">
+        <!-- Seeds will be dynamically populated -->
+      </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div id="middle-section">
+      <p>Money: $<span id="money">10</span></p>
+      <button id="upgrade-plot">Upgrade Plot ($5)</button>
+      <button id="unlock-crop">Unlock New Crop ($10)</button>
+      <div class="farm-container">
+        <div id="farm">
+          <!-- Plots go here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column for Achievements -->
+    <div id="right-column">
+      <h2>Achievements</h2>
+      <ul id="achievements-list">
+        <!-- Achievement items will be added dynamically -->
+      </ul>
+      <h2>Upgrades</h2>
+      <ul id="upgrades-list">
+        <!-- Upgrade options will be dynamically populated -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Link to Game Script -->
+  <script type="module" src="./scripts/game.js"></script>
+</body>
+</html>

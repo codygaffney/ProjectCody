@@ -1,0 +1,262 @@
+@media (max-width: 1000px) {
+  #game-container {
+      flex-direction: column; /* Stack columns on smaller screens */
+      align-items: center; /* Keep everything centered */
+      height: auto; /* Allow the height to expand */
+  }
+
+  #left-column, #middle-section, #right-column {
+      max-width: 100%; /* Adjust column width for smaller screens */
+  }
+
+  #middle-section {
+      order: 1; /* Ensure the farm is in the center */
+  }
+
+  #left-column {
+      order: 2; /* Move the seed list below the farm */
+  }
+
+  #right-column {
+      order: 3; /* Move the upgrades/achievements to the bottom */
+  }
+}
+
+@media (max-width: 600px) {
+  #game-container {
+      flex-direction: column;
+  }
+
+  #left-column, #middle-section, #right-column {
+      max-width: 100%;
+  }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+
+  /* Game Container */
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 10px auto;
+    max-width: 1200px;
+    justify-content: center; /* Center game content horizontally */
+    align-items: center; /* Center game content vertically */
+    overflow: hidden; /* Prevent scrolling inside the game container */
+  }
+
+  /* Define column behavior */
+#left-column, #middle-section, #right-column {
+  flex: 1; /* Allow columns to shrink and grow equally */
+  min-width: 250px; /* Prevent columns from becoming too small */
+}
+
+/* Ensure the middle section is larger */
+#middle-section {
+  flex: 2;
+  max-width: 600px; /* Set a max-width so it doesn't take up too much space */
+}
+
+/* Allow scrolling inside specific columns */
+#left-column, #right-column {
+  height: auto; /* Allow it to expand */
+  overflow-y: auto; /* Enables scrolling inside these divs */
+  max-height: 90vh; /* Ensure they don’t expand infinitely */
+}
+  
+  /* Left and Right Columns */
+  #right-column {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+  #left-column {
+    overflow-y: auto;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  #seed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Seed Buttons */
+.seed-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Consistent width */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ddd; /* Default greyed-out color */
+  color: #666; /* Greyed-out text */
+  cursor: not-allowed; /* Default cursor for locked seeds */
+  box-sizing: border-box; /* Include padding and border in width */
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Unlocked Buttons */
+.seed-item.unlocked {
+  background-color: #fff; /* White background for unlocked seeds */
+  color: #000; /* Black text for unlocked seeds */
+  cursor: pointer; /* Pointer cursor for enabled buttons */
+}
+
+/* Disabled Buttons */
+.seed-item:disabled {
+  opacity: 0.6; /* Slight transparency for disabled buttons */
+}
+
+/* Hover Effect for Enabled Buttons */
+.seed-item:hover:enabled {
+  background-color: #e0e0e0; /* Light grey on hover for enabled buttons */
+}
+  
+  #upgrades-list, #achievements-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #upgrades-list li, #achievements-list li {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  #upgrades-list li button {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+  
+  #farm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    gap: 5%; /* Dynamic gap between plots */
+    justify-content: center; /* Center grid horizontally */
+    align-content: center; /* Center grid vertically */
+    width: 90%; /* Farm width relative to the screen size */
+    max-width: 600px; /* Limit maximum width */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    padding: 12%; /* Equal gap around the grid */
+    background-image: url('../images/Farm.png'); /* Background image */
+    background-size: cover; /* Cover the container */
+    background-repeat: no-repeat; /* Prevent repetition */
+    background-position: center; /* Center the image */
+    margin: auto; /* Center the farm div on the page */
+  }
+  
+  .farm-container {
+    display: flex;
+    justify-content: center; /* Center farm horizontally */
+    align-items: center; /* Center farm vertically */
+    /*height: 50vh; /* Take full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  
+  .plot {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    background-image: url('../images/Plot.png'); /* Add background image */
+    background-size: cover; /* Ensure background covers the plot */
+    background-repeat: no-repeat; /* Prevent repetition */
+    background-position: center; /* Center the background */
+    border: 0px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    padding: 5px; /* Add space inside the plot */
+  }
+  
+  .plot img {
+    max-width: 50%; /* Ensure the image fits within the plot */
+    max-height: 50%; /* Limit the image height */
+    object-fit: contain; /* Maintain the aspect ratio */
+    margin-bottom: 5px; /* Add spacing below the image */
+  }
+  
+  
+  .plot.ready {
+    background-color: #c8e6c9;
+    border-color: #4caf50;
+  }
+  
+  /* Crop Info */
+  .crop-image {
+    max-width: 50%; /* Scale image to fit within the plot */
+    max-height: 40%; /* Keep the height proportional */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  .crop-info {
+    height: 30px; /* Fixed height */
+    font-size: 12px; /* Smaller font size */
+    line-height: 1.2; /* Adjust line height */
+  }
+  
+  .progress-bar {
+    width: 90%; /* Relative width to fit inside the plot */
+    height: 8px; /* Fixed height for the progress bar */
+    background-color: #ddd; /* Background for the progress bar container */
+    border-radius: 4px; /* Rounded corners */
+    margin-top: 5px; /* Space above the progress bar */
+  }
+  
+  .progress {
+    width: 0%; /* Initial progress width */
+    height: 100%; /* Full height of the progress bar */
+    background-color: #4caf50; /* Green progress indicator */
+    transition: width 0.1s linear; /* Smooth width transition */
+  }
+  
