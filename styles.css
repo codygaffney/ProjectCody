@@ -24,6 +24,23 @@ body {
     100% { background-position: 100% 100%; }
 }
 
+h1, h2, p, button {
+    margin: 0;
+    padding: 10px 0;
+}
+
+button {
+    margin-bottom: 60px;
+}
+br + br {
+    display: block;
+    content: "";
+    margin: 40px auto;
+    width: 80%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 h1.glitch {
     font-size: 3em;
     text-transform: uppercase;
@@ -91,4 +108,19 @@ nav ul li a:hover {
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
+}
+
+button {
+    background: #222;
+    color: cyan;
+    border: 2px solid cyan;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: cyan;
+    color: #222;
 }
