@@ -1,126 +1,78 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    background: #0a0a0a;
+    margin: 0; padding: 0; color: #fff; background: #0a0a0a;
+    font-family: Arial, sans-serif; text-align: center;
     overflow-x: hidden;
-    text-align: center;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #0a0a0a, #1f1f1f);
-    z-index: -1;
-    animation: backgroundAnimation 10s infinite alternate;
-}
-
-@keyframes backgroundAnimation {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-h1, h2, p, button {
-    margin: 0;
-    padding: 10px 0;
-}
-
-button {
-    margin-bottom: 60px;
-}
-br + br {
-    display: block;
-    content: "";
-    margin: 40px auto;
-    width: 80%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-h1.glitch {
-    font-size: 3em;
-    text-transform: uppercase;
-    position: relative;
+  }
+  
+  /* Loader Spinner */
+  .loader {
+    width: 50px; height: 50px; border: 5px solid cyan;
+    border-top: 5px solid magenta; border-radius: 50%;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite; z-index: 999;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Video Hero */
+  #hero {
+    position: relative; width: 100%; height: auto; overflow: hidden;
+  }
+  #heroVideo {
+    width: 100%; height: auto; object-fit: cover;
+  }
+  
+  /* Glitch Title */
+  h1.glitch {
+    font-size: 3em; margin-top: 20px; text-transform: uppercase;
     animation: glitch 1s infinite;
-}
-
-@keyframes glitch {
+  }
+  @keyframes glitch {
     0% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
     50% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
     100% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: cyan;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: magenta;
-    transform: scale(1.1);
-}
-
-.loader {
-    width: 50px;
-    height: 50px;
-    border: 5px solid cyan;
-    border-top: 5px solid magenta;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-#typewriter {
-    font-size: 1.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white;
-    width: 0;
-    animation: typing 3s steps(40, end) forwards;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-button {
-    background: #222;
-    color: cyan;
-    border: 2px solid cyan;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: cyan;
-    color: #222;
-}
+  }
+  
+  /* Typewriter Text */
+  #typewriter {
+    font-size: 1.5em; margin-bottom: 20px; white-space: nowrap;
+    overflow: hidden; border-right: 2px solid white;
+    display: inline-block;
+  }
+  
+  /* Game Cards */
+  #games {
+    display: flex; flex-wrap: wrap; justify-content: center; margin: 20px 0;
+  }
+  .game-card {
+    background: #1f1f1f; border: 1px solid #333;
+    border-radius: 5px; margin: 10px; padding: 10px; width: 220px;
+  }
+  .game-img {
+    width: 200px; height: auto; display: block; margin: 0 auto 10px;
+  }
+  button {
+    background: #222; color: cyan; border: 2px solid cyan;
+    padding: 10px 20px; cursor: pointer; transition: 0.3s;
+  }
+  button:hover {
+    background: cyan; color: #222;
+  }
+  
+  /* Contact + Footer */
+  #contact h2 { margin-top: 40px; }
+  footer { margin: 40px 0; }
+  
+  /* Background Animation (Optional) */
+  body::before {
+    content: ""; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(45deg, #0a0a0a, #1f1f1f);
+    z-index: -1; animation: bgAnim 10s infinite alternate;
+  }
+  @keyframes bgAnim {
+    to { background-position: 100% 100%; }
+  }
+  

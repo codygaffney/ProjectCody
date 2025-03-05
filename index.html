@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Project Cody - Game Development</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
-
 <body>
-  <div class="background"></div>
-  <header>
-    <h1 class="glitch">Project Cody</h1>
-    <p id="typewriter">Just my Little Game Development Projects</p>
+  <!-- Loading Spinner -->
+  <div class="loader"></div>
+
+  <!-- Animated Video Logo Hero -->
+  <header id="hero">
+    <video autoplay muted playsinline id="heroVideo">
+      <source src="ProjectCodyLogoAnimation.mp4" type="video/mp4">
+    </video>
   </header>
 
-  <br><br>
+  <!-- Main Title and Typewriter -->
+  <h1 class="glitch">Project Cody</h1>
+  <p id="typewriter"></p>
 
-  <!--
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
--->
-  <section id="about">
-    <h2>About Project Cody</h2>
-    <p>Welcome to Project Cody, where I try game development. My mission is to build immersive and engaging gaming
-      experiences... sometimes.</p>
+  <!-- Games Section -->
+  <section id="games">
+    <div class="game-card">
+      <img src="moneymaker.png" alt="Money Maker" class="game-img">
+      <h2>Money Maker!</h2>
+      <p>Watch the money go!</p>
+      <button onclick="location.href='moneymaker/index.html'">Play</button>
+    </div>
+    <div class="game-card">
+      <img src="farmclicker.png" alt="Farm Clicker" class="game-img">
+      <h2>Farm Clicker!</h2>
+      <p>Grow crops and expand your farm!</p>
+      <button onclick="location.href='farmingclicker/farmclicker.html'">Play</button>
+    </div>
   </section>
 
-  <br><br>
-
-  <section id="features">
-    <h1>Games Under Developement</h1>
-    <br>
-
-    <h2>Money Maker!</h2>
-    <p>Watch the money go!</p>
-    <button onclick="location.href='moneymaker/index.html'">Play Money Maker</button>
-    <br>
-
-    <h2>Farm Clicker!</h2>
-    <p>Grow crops, earn money, and expand your farm!</p>
-    <button onclick="location.href='farmingclicker/farmclicker.html'">Play Farm Clicker</button>
-
-  </section>
-  <br><br>
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: contact@projectcody.com</p>
   </section>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Project Cody. All Rights Reserved.</p>
   </footer>
-  <div class="loader"></div>
-</body>
 
+  <script src="script.js"></script>
+</body>
 </html>
